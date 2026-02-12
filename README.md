@@ -11,17 +11,17 @@ The system features a **RESTful Flask API** for backend processing, a **SQLite**
 
 ## 🏗️ Architecture
 
-The project follows a **Microservice-style** architecture with clear separation of concerns:
+The project follows a microservice-style architecture with clear separation of concerns.
 
 ```mermaid
 graph TD
-    User[User] -->|Interacts| Streamlit[Streamlit Dashboard]
-    Streamlit -->|HTTP Requests| Flask[Flask API Backend]
-    Flask -->|Auth & Validation| RiskEngine[Risk Scoring Engine]
-    Flask -->|Inference| ML[ML Model (Random Forest)]
-    Flask -->|Read/Write| DB[(SQLite Database)]
-    RiskEngine -->|Rules| RuleLogic[Rule-Based Logic]
-    ML -->|Feature Extraction| Features[URL Feature Extractor]
+    A[User] --> B[Streamlit Dashboard]
+    B --> C[Flask API Backend]
+    C --> D[Risk Scoring Engine]
+    C --> E[ML Model - Random Forest]
+    C --> F[(SQLite Database)]
+    D --> G[Rule Based Logic]
+    E --> H[URL Feature Extractor]
 ```
 
 ### Key Components:
